@@ -106,16 +106,12 @@ try {
     
 
     await CalendarCompany.findOneAndUpdate(req.body)
+    const updatedData = await CalendarCompany.findOne({ companyId });
     
     return res.status(200).json({
         ok: true,
-        companyId,
-        year,
-        totalDaysOfHolidays,
-        bankHolidays,
-        workingHours,
-        annualWorkingHours,
-        weeklyWorkingHours
+        updatedData,
+        msg: 'Datos actualizados correctamente'
     })
 
 } catch (error) {

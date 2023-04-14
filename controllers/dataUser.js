@@ -181,7 +181,7 @@ const updateUser = async ( req, res = response ) => {
     const { userId } = req.params;
 
     const { name, lastname, position, photo, email, isAdmin } = req.body;
-
+    console.log(req.body);
     const dataUser = { name, lastname, position, photo, email };
     
     const credentials = { email, isAdmin };
